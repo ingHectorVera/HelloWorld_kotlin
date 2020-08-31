@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import android.view.View.OnClickListener as OnClickListener1
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,7 +25,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun rollDice() {
-        Toast.makeText(this,"button clicked", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,"button clicked", Toast.LENGTH_SHORT).show()
+        val randomInt = (1..6).random()
+        val resultText : TextView = findViewById(R.id.tvNumber)
+        resultText.text = randomInt.toString()
     }
 
     private fun doNothing() {}
